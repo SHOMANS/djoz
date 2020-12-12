@@ -1,11 +1,11 @@
-import FooterIcon from "../FooterIcon";
-import Icons from "../Icons";
+import * as I from "../Icons";
 import ContactItem from "./ContactItem";
 import * as S from "./style";
+import * as T from "../Typography";
 
-export default function Footer() {
+export default function Footer({ home }) {
   return (
-    <S.Wrapper>
+    <S.Wrapper home={home}>
       <div className="container">
         <article className="wrapper">
           <div>
@@ -21,26 +21,28 @@ export default function Footer() {
             />
           </div>
           <div>
-            <h2>DJoz</h2>
-            <FooterIcon pointer iconName={["fab", "facebook-f"]} />
-            <FooterIcon pointer iconName={["fab", "twitter"]} />
-            <FooterIcon pointer iconName={["fab", "instagram"]} />
-            <FooterIcon pointer iconName={["fab", "dribbble"]} />
+            <T.H3 lColor>DJoz</T.H3>
+            <I.Footericon curserp iconName={["fab", "facebook-f"]} />
+            <I.Footericon curserp iconName={["fab", "twitter"]} />
+            <I.Footericon curserp iconName={["fab", "instagram"]} />
+            <I.Footericon curserp iconName={["fab", "dribbble"]} />
           </div>
           <div>
-            <h4>Stay With me</h4>
-            <input />
-            <button>
-              <Icons iconName="paper-plane" />
-            </button>
-            {/* <I.InputWithBtn /> */}
+            <T.H4 lColor>Stay With me</T.H4>
+            <form>
+              <input placeholder="Email" />
+              <button>
+                <I.Icons iconName="paper-plane" />
+              </button>
+              {/* <I.InputWithBtn /> */}
+            </form>
           </div>
         </article>
         <div>
           <p className="footerCopy">
             Copyright &copy; 2020 All rights reserved | This template is made
             with
-            <Icons iconName="heart" /> by <a>Colorlib</a>
+            <I.Icons iconName="heart" /> by <a>Colorlib</a>
           </p>
         </div>
       </div>

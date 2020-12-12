@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import Icons from "../Icons";
+import * as I from "../Icons";
 
 const Wrapper = styled.a`
   display: flex;
@@ -85,7 +85,7 @@ export function PlayBtn(props) {
   return (
     <Wrapper bgColor={bgColor} href={hrefLink}>
       <div>
-        <Icons iconName="play" />
+        <I.Icons iconName="play" />
       </div>
     </Wrapper>
   );
@@ -94,7 +94,7 @@ export function SmallPlayBtn(props) {
   const { bgColor, hrefLink } = props;
   return (
     <SmallWrapper bgColor={bgColor} href={hrefLink}>
-      <Icons iconName="play" />
+      <I.Icons iconName="play" />
     </SmallWrapper>
   );
 }
@@ -103,7 +103,7 @@ export function SmallestPlayBtn(props) {
   return (
     <SmallestWrapper bgColor={bgColor} href={hrefLink}>
       <div>
-        <Icons iconName="play" />
+        <I.Icons iconName="play" />
       </div>
     </SmallestWrapper>
   );

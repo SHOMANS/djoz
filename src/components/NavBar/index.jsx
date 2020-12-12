@@ -1,12 +1,21 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Icons from "../Icons";
+import * as I from "../Icons";
 import Logo from "./logo.png";
 import * as S from "./style";
 
-export default function NavBar() {
+export default function NavBar({
+  headerNav,
+  home,
+  about,
+  disco,
+  tours,
+  videos,
+  pages,
+  contact,
+}) {
   return (
-    <S.Wrapper>
+    <S.Wrapper headerNav={headerNav}>
       <div className="container">
         <div className="wrapper">
           <div className="imgWrapper">
@@ -14,45 +23,45 @@ export default function NavBar() {
           </div>
           <div className="navContent">
             <ul>
-              <li className="active">
+              <li className={home && "active"}>
                 <Link to="/">Home</Link>
               </li>
-              <li>
+              <li className={about && "active"}>
                 <Link to="/About">About</Link>
               </li>
-              <li>
+              <li className={disco && "active"}>
                 <Link to="/Discography">Discography</Link>
               </li>
-              <li>
+              <li className={tours && "active"}>
                 <Link to="/Tours">Tours</Link>
               </li>
-              <li>
+              <li className={videos && "active"}>
                 <Link to="/Videos">Videos</Link>
               </li>
-              <li>
-                <a href={false}>Pages</a>
+              <li className={pages && "active"}>
+                <a>Pages</a>
                 <div className="listDown">
                   <Link to="/About">About</Link>
                   <Link to="/Blog">Blog</Link>
                   <Link to="/Blog/Details">Blog Details</Link>
                 </div>
               </li>
-              <li>
+              <li className={contact && "active"}>
                 <Link to="/Contact">Contact</Link>
               </li>
             </ul>
             <div className="iconsWrapper">
-              <a href={false}>
-                <Icons pointer iconName={["fab", "facebook-f"]} />
+              <a>
+                <I.Icons curserp iconName={["fab", "facebook-f"]} />
               </a>
-              <a href={false}>
-                <Icons pointer iconName={["fab", "twitter"]} />
+              <a>
+                <I.Icons curserp iconName={["fab", "twitter"]} />
               </a>
-              <a href={false}>
-                <Icons pointer iconName={["fab", "instagram"]} />
+              <a>
+                <I.Icons curserp iconName={["fab", "instagram"]} />
               </a>
-              <a href={false}>
-                <Icons pointer iconName={["fab", "dribbble"]} />
+              <a>
+                <I.Icons curserp iconName={["fab", "dribbble"]} />
               </a>
             </div>
           </div>

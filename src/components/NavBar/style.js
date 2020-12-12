@@ -2,8 +2,9 @@ import styled from "styled-components";
 
 export const Wrapper = styled.nav`
   display: flex;
-  background: rgba(42, 1, 74, 0.5);
-  position: absolute;
+  background-color: ${(props) =>
+    props.headerNav ? " rgba(42, 1, 74, 0.5)" : "#290849"};
+  position: ${(props) => (props.headerNav ? " absolute" : "auto")};
   left: 0;
   top: 0;
   width: 100%;
@@ -14,9 +15,7 @@ export const Wrapper = styled.nav`
   }
   & .imgWrapper {
     width: 16.66666%;
-    margin: 20px 15px 21px;
-  }
-  & img {
+    margin: 20px 15px 21px 0;
   }
   & .iconsWrapper {
     margin: 31px 0 27px;
@@ -33,15 +32,16 @@ export const Wrapper = styled.nav`
   & .navContent {
     display: flex;
     width: 83.333333%;
-    margin-right: 15px;
+    /* margin-right: 15px; */
     justify-content: flex-end;
   }
   & ul {
     display: flex;
     list-style: none;
-    padding: 31px 15px 0;
-    margin-right: 15px;
-    justify-content: space-between;
+    padding: 32px 15px 0;
+    /* margin-right: 15px; */
+    justify-content: space-evenly;
+    z-index: 9;
     /* line-height: 24px; */
     & .active::after {
       position: absolute;
@@ -54,8 +54,11 @@ export const Wrapper = styled.nav`
     }
     & li {
       list-style: none;
-      margin-left: 45px;
+      margin-right: 50px;
       position: relative;
+      &:last-child {
+        margin-right: 15px;
+      }
       &:hover .listDown {
         opacity: 1;
         top: 39px;
@@ -81,13 +84,14 @@ export const Wrapper = styled.nav`
         }
       }
       & a {
-        font-size: 18px;
+        font-size: 15px;
         text-transform: uppercase;
         color: #fff;
         display: block;
         padding: 6px 0;
         position: relative;
         text-decoration: none;
+        /* line-height: 1; */
         /* font-weight: 500; */
       }
       &::after {

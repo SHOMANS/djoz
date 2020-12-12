@@ -1,12 +1,13 @@
-import Icons from "../../Icons";
+import * as I from "../../Icons";
 import * as P from "../../PlayBtn";
 import * as S from "./style";
+import * as T from "../../Typography";
 
 export default function TrackAudio(props) {
   const { trackName } = props;
   return (
-    <>
-      <h4>{trackName}</h4>
+    <S.Article>
+      <T.H4>{trackName}</T.H4>
       <S.Wrapper>
         <P.SmallPlayBtn />
         <div className="fullPlayerBar">
@@ -17,7 +18,7 @@ export default function TrackAudio(props) {
           <span>00:00</span>
         </div>
         <div className="volumeBox">
-          <Icons iconName="volume-down" />
+          <I.Icons iconName="volume-down" />
           {/* <Icons iconName="volume-mute" />
           <Icons iconName="volume-off" />
           <Icons iconName="volume-up" /> */}
@@ -26,6 +27,6 @@ export default function TrackAudio(props) {
           </div>
         </div>
       </S.Wrapper>
-    </>
+    </S.Article>
   );
 }

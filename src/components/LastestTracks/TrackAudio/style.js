@@ -1,5 +1,16 @@
 import styled from "styled-components";
 
+export const Article = styled.article`
+  /* overflow: hidden; */
+  margin-bottom: 40px;
+  & h4 {
+    font-size: 26px;
+    color: #111111;
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+  }
+`;
 export const Wrapper = styled.section`
   display: flex;
   & .fullPlayerBar {
@@ -13,7 +24,7 @@ export const Wrapper = styled.section`
         position: relative;
         height: 100%;
         background: #5c00ce;
-        overflow: visible !important;
+        /* overflow: visible !important; */
         width: 50%;
       }
     }
@@ -29,7 +40,7 @@ export const Wrapper = styled.section`
         position: relative;
         height: 100%;
         background: #5c00ce;
-        overflow: visible !important;
+        /* overflow: visible !important; */
         width: 50%;
       }
     }
