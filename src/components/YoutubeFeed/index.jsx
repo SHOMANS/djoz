@@ -1,9 +1,16 @@
-import VideoCard from "./VideoCard";
+import * as C from "../Card";
+import * as T from "../Typography";
 import Img1 from "./youtube-1.jpg";
 import Img2 from "./youtube-2.jpg";
 import Img3 from "./youtube-3.jpg";
 import styled from "styled-components";
+// import axios from "axios";
 
+const Section = styled.section`
+  text-align: center;
+  padding-bottom: 50px;
+  padding-top: 100px;
+`;
 const Wrapper = styled.div`
   display: flex;
   & article {
@@ -14,28 +21,26 @@ const Wrapper = styled.div`
     }
   }
 `;
-
 export default function YoutubeFeed() {
   return (
-    <section>
+    <Section>
       <div className="container">
-        <h2>Latest videos</h2>
-        <h3>YOUTUBE FEED</h3>
+        <T.HWB BH="Latest videos">{"YOUTUBE FEED"}</T.HWB>
         <Wrapper>
-          <VideoCard
-            imgSrc={Img1}
+          <C.Card
+            cardImg={Img1}
             content="David Guetta Miami Ultra Music Festival 2019"
           />
-          <VideoCard
-            imgSrc={Img2}
+          <C.Card
+            cardImg={Img2}
             content="Martin Garrix (Full live-set) | SLAM!Koningsdag"
           />
-          <VideoCard
-            imgSrc={Img3}
+          <C.Card
+            cardImg={Img3}
             content="Dimitri Vegas, Steve Aoki &amp; Like Mike’s “3 Are Legend”"
           />
         </Wrapper>
       </div>
-    </section>
+    </Section>
   );
 }

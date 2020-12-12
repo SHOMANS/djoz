@@ -1,21 +1,21 @@
 //DJ ALEXANDRA RUD
-import * as B from "../Btn";
-import InfoImg from "./InfoImg.webp";
 
-export default function Info() {
+import InfoImg from "./InfoImg.webp";
+// import AboutImg from "./signature.png";
+
+import * as S from "./style";
+
+export default function Info({ children }) {
   return (
-    <section>
-      <img src={InfoImg} alt="Info" />
-      <div>
-        <h2>About me</h2>
-        <h3>DJ ALEXANDRA RUD</h3>
-        <p>
-          DJ Rainflow knows how to move your mind, body and soul by delivering
-          tracks that stand out from the norm. As if this impressive succession
-          of high impact, floor-filling bombs wasn’t enough to sustain.
-        </p>
-        <B.Btn BtnContent="Contact Me" />
+    <S.Section>
+      <div className="container">
+        <S.Wrapper>
+          <div className="imgWrapper">
+            <img src={InfoImg} alt="Info" />
+          </div>
+          <div>{children}</div>
+        </S.Wrapper>
       </div>
-    </section>
+    </S.Section>
   );
 }

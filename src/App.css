@@ -1,12 +1,33 @@
+@font-face {
+  font-family: 'Rockville Solid Regular';
+  src:  url('./components/fonts/FontsFree-Net-RockvilleSolid.ttf')
+}
+@font-face {
+  font-family: 'Now Regular';
+  src:  url('./components/fonts/Now-Regular.otf')
+}
+@font-face {
+  font-family: 'Rajdhani';
+  src:  url('./components/fonts/Rajdhani-Bold.ttf');
+  /* src:  url('./components/fonts/Rajdhani-Light.ttf');
+  src:  url('./components/fonts/Rajdhani-Medium.ttf');
+  src:  url('./components/fonts/Rajdhani-Regular.ttf');
+  src:  url('./components/fonts/Rajdhani-SemiBold.ttf'); */
+}
+
+
 * {
   margin:0 ;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Now Regular";
 }
 
 .container {
   width: 1170px;
   margin: auto;
+  padding-right: 15px;
+  padding-left: 15px;
 }
 
 .wrapper {
@@ -39,4 +60,74 @@
     visibility: hidden;
     opacity: 0; 
   }
+}
+
+
+html,
+body {
+	height: 100%;
+	font-family: "Now Regular";
+	-webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin: 0;
+	/* color: #111111; */
+	font-weight: 400;
+	font-family: "Rajdhani", sans-serif;
+}
+
+h1 {
+	font-size: 70px;
+}
+
+h2 {
+	font-size: 36px;
+}
+
+h3 {
+	font-size: 30px;
+}
+
+h4 {
+	font-size: 24px;
+}
+
+h5 {
+	font-size: 18px;
+}
+
+h6 {
+	font-size: 16px;
+}
+
+p {
+	font-size: 15px;
+	font-family: "Now Regular";
+	font-weight: 400;
+	line-height: 26px;
+	margin: 0 0 15px 0;
+}
+
+img {
+	max-width: 100%;
+}
+
+input:focus,
+select:focus,
+button:focus,
+textarea:focus {
+	outline: none;
+}
+
+a:hover,
+a:focus {
+	text-decoration: none;
+	outline: none;
+	/* color: #ffffff; */
 }
