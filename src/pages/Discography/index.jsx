@@ -4,7 +4,7 @@ import NavBar from "../../components/NavBar";
 export default function DiscographyPage() {
   return (
     <div>
-      <NavBar />
+      <NavBar disco />
       <Footer />
     </div>
   );
