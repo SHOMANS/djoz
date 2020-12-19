@@ -188,7 +188,9 @@ const data = [
   },
 ];
 
-export const pages = Math.ceil(data.length / 6);
+const elimentsCount = 6;
+
+export const pages = Math.ceil(data.length / elimentsCount);
 
 export const pagesArray = [];
 
@@ -199,5 +201,8 @@ for (let i = 1; i <= pages; i++) {
 export const pagesData = [];
 
 for (let i = 0; i < pages; i++) {
-  pagesData[i] = data.slice(i * 6, i * 6 + 6);
+  pagesData[i] = data.slice(
+    i * elimentsCount,
+    i * elimentsCount + elimentsCount
+  );
 }

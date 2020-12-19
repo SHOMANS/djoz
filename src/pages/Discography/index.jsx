@@ -1,6 +1,7 @@
 import Footer from "../../components/Footer";
 import Links from "../../components/Links";
 import * as T from "../../components/Typography";
+import * as B from "../../components/Btn";
 import NavBar from "../../components/NavBar";
 import { useState, useEffect } from "react";
 import { pagesData, pagesArray, pages } from "./data";
@@ -14,14 +15,16 @@ export default function DiscographyPage() {
 
   const handleClick = (e) => {
     e.preventDefault();
-    setNumber(e.target.id - 1);
-  };
-
-  const nextPrev = (e) => {
-    e.preventDefault();
     const click = e.target.id;
-    click === "next" && setNumber(number + 1);
-    click === "prev" && setNumber(number - 1);
+    console.log(click);
+    if (isNaN(click) === true) {
+      console.log("not number");
+      click === "next" && setNumber(number + 1);
+      click === "prev" && setNumber(number - 1);
+    } else {
+      console.log("number");
+      setNumber(click - 1);
+    }
   };
 
   useEffect(() => {
@@ -50,13 +53,12 @@ export default function DiscographyPage() {
             ))}
             <div className="pages">
               {number !== 0 && (
-                <a id="prev" href="" onClick={nextPrev}>
+                <B.PageBtn id="prev" onClick={handleClick}>
                   Prev
-                </a>
+                </B.PageBtn>
               )}
-
               {pagesArray.map((page) => (
-                <a
+                <B.PageBtn
                   className={page === number + 1 && "active"}
                   id={page}
                   href=""
@@ -64,12 +66,12 @@ export default function DiscographyPage() {
                   onClick={handleClick}
                 >
                   {page}
-                </a>
+                </B.PageBtn>
               ))}
               {number !== pages - 1 && (
-                <a id="next" href="" onClick={nextPrev}>
+                <B.PageBtn id="next" onClick={handleClick}>
                   NEXT
-                </a>
+                </B.PageBtn>
               )}
             </div>
           </section>

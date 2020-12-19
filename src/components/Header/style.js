@@ -22,21 +22,29 @@ export const Wrapper = styled.header`
       margin: auto;
     }
   }
-  & > svg {
+  .icon-wrapper {
     position: absolute;
-    font-size: 50px;
-    color: #5c00ce;
-    top: 995px;
-    left: 935px;
-    animation: Down 0.5s infinite alternate;
+    background-color: inherit;
+    height: 50px;
+    width: 100%;
+    bottom: 0;
+    text-align: center;
+    & > svg {
+      /* position: absolute; */
+      font-size: 50px;
+      color: #5c00ce;
+      /* top: 0; */
+      /* left: 935px; */
+      animation: Down 0.5s infinite alternate;
+    }
   }
 
   @keyframes Down {
     0% {
-      top: 995px;
+      margin-top: 0;
     }
     100% {
-      top: 1005px;
+      margin-top: 10px;
     }
   }
 `;
