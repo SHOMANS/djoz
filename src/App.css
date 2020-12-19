@@ -67,7 +67,8 @@ html,
 body {
 	height: 100%;
 	font-family: "Now Regular";
-	-webkit-font-smoothing: antialiased;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
 }
 
 h1,
