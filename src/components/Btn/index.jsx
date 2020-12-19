@@ -25,6 +25,31 @@ const White = styled(Wrapper)`
   border: 2px solid #5c00ce;
   color: #111;
 `;
+const Page = styled.a`
+  display: inline-block;
+  font-size: 15px;
+  color: #111111;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  background: #f2f2f2;
+  -webkit-transition: all, 0.3s;
+  -o-transition: all, 0.3s;
+  transition: all, 0.3s;
+  margin-right: 10px;
+  margin-bottom: 5px;
+  padding: 14px 22px 12px;
+  text-decoration: none;
+  cursor: pointer;
+  &:hover {
+    background: #290849;
+    color: #ffffff;
+  }
+  &.active {
+    background: #290849;
+    color: #ffffff;
+    transform: scale(1.1);
+  }
+`;
 
 export function Btn(props) {
   const { bgColor, btnContent } = props;
@@ -38,4 +63,13 @@ export function NBtn(props) {
 export function WBtn(props) {
   const { bgColor, btnContent } = props;
   return <White bgColor={bgColor}>{btnContent}</White>;
+}
+
+export function PageBtn(props) {
+  const { children, onClick, id, className } = props;
+  return (
+    <Page className={className} id={id} onClick={onClick}>
+      {children}
+    </Page>
+  );
 }

@@ -19,7 +19,9 @@ export default function Header() {
           </T.P>
           <P.PlayBtn />
         </div>
-        <I.Icons iconName="angle-double-down" />
+        <div className="icon-wrapper">
+          <I.Icons iconName="angle-double-down" />
+        </div>
       </S.Wrapper>
     </>
   );

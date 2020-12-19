@@ -47,7 +47,3 @@ export function P({ children, lColor }) {
 export function Span({ children, lColor }) {
   return <S.Span lColor={lColor}>{children}</S.Span>;
 }
-
-// export function P3({ children }) {
-//   return <p>{children}</p>;
-// }

@@ -21,6 +21,7 @@ import {
   faHeart,
   faPaperPlane,
   faHome,
+  faQuoteRight,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
@@ -44,7 +45,8 @@ library.add(
   faMapMarkerAlt,
   faHeart,
   faPaperPlane,
-  faHome
+  faHome,
+  faQuoteRight
 );
 
 const Wrapper = styled.a`

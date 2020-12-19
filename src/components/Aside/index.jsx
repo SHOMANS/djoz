@@ -3,8 +3,11 @@ import * as S from "./style";
 import Input from "../Input";
 import * as B from "../Btn";
 import * as C from "../Card";
-
 import * as I from "../Icons";
+import Img1 from "./br-1.jpg";
+import Img2 from "./br-2.jpg";
+import Img3 from "./br-3.jpg";
+import Img4 from "./br-4.jpg";
 
 export default function Aside() {
   return (
@@ -29,10 +32,26 @@ export default function Aside() {
       </div>
       <div>
         <T.LH4>Recent posts</T.LH4>
-        <C.VCard></C.VCard>
-        <C.VCard></C.VCard>
-        <C.VCard></C.VCard>
-        <C.VCard></C.VCard>
+        <C.VCard
+          cardImg={Img1}
+          content="2020 Bendigo Blues and Roots Music Festival…"
+          date="Dec 17, 2019"
+        />
+        <C.VCard
+          cardImg={Img2}
+          content="2020 Bendigo Blues and Roots Music Festival…"
+          date="Dec 17, 2019"
+        />
+        <C.VCard
+          cardImg={Img3}
+          content="2020 Bendigo Blues and Roots Music Festival…"
+          date="Dec 17, 2019"
+        />
+        <C.VCard
+          cardImg={Img4}
+          content="2020 Bendigo Blues and Roots Music Festival…"
+          date="Dec 17, 2019"
+        />
       </div>
     </S.Wrapper>
   );

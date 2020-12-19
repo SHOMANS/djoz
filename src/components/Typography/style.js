@@ -11,9 +11,6 @@ export const H2 = styled.h2`
   font-family: "Rockville Solid Regular";
   ${(props) =>
     props.lColor ? "color: #ffffff; opacity: 0.1;" : "color: #f2f2f2;"};
-
-  /* margin-bottom: 20px;
-  margin-top: 22px; */
 `;
 export const H3 = styled.h3`
   font-size: 42px;
@@ -45,19 +42,18 @@ export const H4 = styled.h4`
   font-size: 26px;
   color: ${(props) => (props.lColor ? "#ffffff" : "#111111")};
   font-weight: 700;
-  /* margin-top: 25px;
-  margin-bottom: 10px; */
   font-family: "Rajdhani", sans-serif;
   line-height: 1.2;
 `;
 export const LH4 = styled.div`
   text-align: center;
   margin-bottom: 35px;
+  position: relative;
   &::before {
     position: absolute;
     left: 0;
     right: 0;
-    bottom: 0;
+    bottom: -15px;
     height: 5px;
     width: 70px;
     background: #e1e1e1;
@@ -69,16 +65,13 @@ export const LH4 = styled.div`
 export const H5 = styled.h5`
   font-size: 110px;
   font-family: "Rockville Solid Regular";
-  color: #ffffff;
-  /* margin-bottom: 20px;
-  margin-top: 22px; */
+  color: ${(props) => (props.lColor ? "#ffffff" : "#111111")};
 `;
 export const H6 = styled.h6`
   font-size: 15;
   font-weight: 700;
   font-family: "Rajdhani", sans-serif;
-  color: #ffffff;
-  /* margin-top: 22px; */
+  color: ${(props) => (props.lColor ? "#ffffff" : "#111111")};
 `;
 export const P = styled.p`
   font-size: 15px;
@@ -86,7 +79,6 @@ export const P = styled.p`
   color: ${(props) => (props.lColor ? "#ffffff" : "#444444")};
   font-weight: 400;
   line-height: 26px;
-  /* margin: 0 0 15px 0; */
 `;
 export const Span = styled.span`
   color: #ffffff;

@@ -131,3 +131,8 @@ a:focus {
 	outline: none;
 	/* color: #ffffff; */
 }
+
+.displayFlex {
+  display: flex;
+  justify-content: space-between;
+}

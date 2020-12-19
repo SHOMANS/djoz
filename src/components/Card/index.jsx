@@ -50,28 +50,32 @@ export function Card({ cardImg, content }) {
     </article>
   );
 }
-export function ACard({ cardImg, children, smallImg }) {
+export function ACard({ cardImg, children, smallImg, staticCard, imgSize }) {
   return (
-    <S.Wrapper>
-      <S.Img imgUrl={cardImg}>
-        {" "}
-        <S.SmallImg>
-          <img src={smallImg} alt="" />
-        </S.SmallImg>
-      </S.Img>
-      <S.Content>{children}</S.Content>
+    <S.Wrapper staticCard={staticCard}>
+      <div className="card">
+        <S.Img imgUrl={cardImg} imgSize={imgSize}>
+          {staticCard || (
+            <S.SmallImg>
+              <img src={smallImg} alt="" />
+            </S.SmallImg>
+          )}
+        </S.Img>
+        <S.Content>{children}</S.Content>
+      </div>
     </S.Wrapper>
   );
 }
-export function VCard({ cardImg, content, children }) {
+export function VCard({ inverse, cardImg, content, date }) {
   return (
-    <article>
-      <S.Img imgUrl={cardImg}>
-        <P.SmallestPlayBtn />
-      </S.Img>
-      <S.Content>
-        <h4>{content}</h4>
-      </S.Content>
-    </article>
+    <S.Vertical inverse={inverse}>
+      <div className="img">
+        <img src={cardImg} alt="" />
+      </div>
+      <div className="content">
+        <T.H6>{content}</T.H6>
+        <span>{date}</span>
+      </div>
+    </S.Vertical>
   );
 }

@@ -1,11 +1,16 @@
 import styled from "styled-components";
 
 export const Wrapper = styled.div`
-  max-width: 33.333333%;
   padding-right: 15px;
   padding-left: 15px;
-  &:hover {
-    box-shadow: 0px 3px 30px rgba(22, 41, 124, 0.1);
+  margin-bottom: 50px;
+  & > div {
+    text-align: center;
+    ${(props) =>
+      props.staticCard && "box-shadow: 0px 3px 30px rgba(22, 41, 124, 0.1);"}
+    &:hover {
+      box-shadow: 0px 3px 30px rgba(22, 41, 124, 0.1);
+    }
   }
 `;
 export const Article = styled.div`
@@ -50,7 +55,7 @@ export const Img = styled.div`
   background-repeat: no-repeat;
   background-size: cover;
   background-image: url(${(props) => props.imgUrl});
-  height: 240px;
+  height: ${(props) => props.imgSize || "240px"};
   width: 100%;
   display: flex;
   justify-content: center;
@@ -87,5 +92,32 @@ export const SmallImg = styled.div`
     vertical-align: middle;
     line-height: 50px;
     text-align: center;
+  }
+`;
+export const Vertical = styled.div`
+  width: 100%;
+  display: flex;
+  margin-bottom: 25px;
+  ${(props) =>
+    props.inverse
+      ? "flex-direction: row-reverse;text-align: right;"
+      : "flex-direction: row;text-align: left;"}
+
+  .img {
+    ${(props) => (props.inverse ? "margin-left: 25px;" : "margin-right: 25px;")}
+    width: 115px;
+    & img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  & h6 {
+    color: #111111;
+    line-height: 21px;
+    font-weight: 700;
+  }
+  & span {
+    font-size: 13px;
+    color: #888888;
   }
 `;

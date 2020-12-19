@@ -1,15 +1,17 @@
 import Footer from "../../components/Footer";
 import NavBar from "../../components/NavBar";
 import Aside from "../../components/Aside";
+import Links from "../../components/Links";
+import LastestPosts from "./LastedPosts";
 
 export default function BlogPage() {
   return (
     <>
       <NavBar pages />
+      <Links>Blog</Links>
       <div className="container">
-        <div></div>
         <div style={{ display: "flex" }}>
-          <div style={{ width: "66.6666%" }}></div>
+          <LastestPosts />
           <Aside />
         </div>
       </div>

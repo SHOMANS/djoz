@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import styled from "styled-components";
 import Img from "./countdown-bg.jpg";
 import * as T from "../Typography";
@@ -28,6 +29,7 @@ const Wrapper = styled.section`
     padding-bottom: 30px;
   }
   & article {
+    margin-right: -80px;
     display: flex;
     justify-content: center;
     margin-bottom: 30px;
@@ -54,25 +56,73 @@ const Wrapper = styled.section`
 `;
 
 export default function FestivalTimer() {
+  const [seconds, setSeconds] = useState(0);
+  const [minutes, setMinutes] = useState(0);
+  const [hours, setHours] = useState(0);
+  const [days, setDays] = useState(30);
+
+  const timer = () => {
+    if (seconds === 0) {
+      setSeconds(59);
+    } else {
+      setSeconds(seconds - 1);
+    }
+  };
+
+  useEffect(() => {
+    if (seconds === 59) {
+      if (minutes === 0) {
+        setMinutes(59);
+      } else {
+        setMinutes(minutes - 1);
+      }
+    }
+  }, [seconds]);
+
+  useEffect(() => {
+    if (minutes === 59) {
+      if (hours === 0) {
+        setHours(59);
+      } else {
+        setHours(hours - 1);
+      }
+    }
+  }, [minutes]);
+
+  useEffect(() => {
+    if (hours === 23) {
+      if (days === 0) {
+        setDays(59);
+      } else {
+        setDays(days - 1);
+      }
+    }
+  }, [hours]);
+
+  useEffect(() => {
+    const timeDown = setInterval(timer, 1000);
+    return () => clearInterval(timeDown);
+  }, [seconds]);
+
   return (
     <Wrapper>
       <T.H2>Tomorrowland 2020</T.H2>
       <T.H4 lColor>MUSIC FESTIVAL START IN</T.H4>
       <article>
         <div>
-          <T.Span>29</T.Span>
-          <T.P lColor>DAYS</T.P>
+          <T.Span>{days}</T.Span>
+          <T.P lColor>Days</T.P>
         </div>
         <div>
-          <T.Span>09</T.Span>
+          <T.Span>{hours}</T.Span>
           <T.P lColor>Hours</T.P>
         </div>
         <div>
-          <T.Span>02</T.Span>
+          <T.Span>{minutes}</T.Span>
           <T.P lColor>Minutes</T.P>
         </div>
         <div>
-          <T.Span>59</T.Span>
+          <T.Span>{seconds}</T.Span>
           <T.P lColor>Seconds</T.P>
         </div>
       </article>
