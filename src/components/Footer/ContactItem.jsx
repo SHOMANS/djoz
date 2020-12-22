@@ -35,7 +35,7 @@ export default function ContactItem(props) {
       <I.Footericon iconName={iconName} />
       <div>
         <T.P lColor>{pContent}</T.P>
-        <T.H6>{hContent}</T.H6>
+        <T.H6 lColor>{hContent}</T.H6>
       </div>
     </Wrapper>
   );

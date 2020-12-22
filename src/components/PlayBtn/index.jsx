@@ -37,14 +37,17 @@ const SmallWrapper = styled.a`
   position: relative;
   height: 50px;
   width: 50px;
-  background: transparent;
-  border: 2px solid #e1e1e1;
+  ${(props) =>
+    props.bgColor
+      ? "background-color: #5c00ce;color:#fff;border:none;"
+      : "background: transparent;color: #5c00ce;border: 2px solid #e1e1e1;"}
+
   display: inline-block;
   border-radius: 50%;
   cursor: pointer;
-  color: #5c00ce;
+
   & svg {
-    top: 13px;
+    top: 15px;
     left: 17px;
     position: absolute;
     font-size: 20px;
